@@ -15,7 +15,7 @@ const Features = () => {
         start: "-10% bottom",
       },
       onComplete: () => {
-        video.play();
+        videoRef.current.play();
       },
     });
 
@@ -35,8 +35,8 @@ const Features = () => {
 
   return (
     <section className="h-full common-padding bg-zinc relative overflow-hidden">
-      <div className=" screen-max-width">
-        <div className="features_title">
+      <div className="screen-max-wdith">
+        <div className="mb-12 w-full">
           <h1 id="features_title" className="section-heading">
             Explore the full story.
           </h1>
@@ -55,7 +55,7 @@ const Features = () => {
               <video
                 playsInline
                 id="exploreVideo"
-                className="w-full h-full object-center"
+                className="w-full h-full object-cover object-center"
                 preload="none"
                 muted
                 autoPlay
@@ -77,7 +77,7 @@ const Features = () => {
                 <div className="overflow-hidden flex-1 h-[50vh]">
                   <img
                     src={explore2Img}
-                    alt="titanium"
+                    alt="titanium 2"
                     className="feature-video g_grow"
                   />
                 </div>
@@ -86,12 +86,12 @@ const Features = () => {
               <div className="feature-text-container">
                 <div className="flex-1 flex-center">
                   <p className="feature-text g_text">
-                    iPhone 15 Pro is {""}
+                    iPhone 15 Pro is{" "}
                     <span className="text-white">
                       the first iPhone to feature an aerospace-grade titanium
                       design
                     </span>
-                    , using the same alloy that spacecrafts for missions to
+                    , using the same alloy that spacecrafts use for missions to
                     Mars.
                   </p>
                 </div>
@@ -99,7 +99,7 @@ const Features = () => {
                 <div className="flex-1 flex-center">
                   <p className="feature-text g_text">
                     Titanium has one of the best strength-to-weight ratios of
-                    any metal, making these our {""}
+                    any metal, making these our{" "}
                     <span className="text-white">
                       lightest Pro models ever.
                     </span>
