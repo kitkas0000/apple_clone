@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ModelView from "./ModelView";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { yellowImg } from "../utils";
 
 import * as THREE from "three";
@@ -27,7 +27,7 @@ const Model = () => {
   const small = useRef(new THREE.Group());
   const large = useRef(new THREE.Group());
 
-  //rotation
+  // rotation
   const [smallRotation, setSmallRotation] = useState(0);
   const [largeRotation, setLargeRotation] = useState(0);
 
@@ -54,7 +54,7 @@ const Model = () => {
       y: 0,
       opacity: 1,
     });
-  });
+  }, []);
 
   return (
     <section className="common-padding">
@@ -64,7 +64,7 @@ const Model = () => {
         </h1>
 
         <div className="flex flex-col items-center mt-5">
-          <div className="w-full h-[75vh] md:h-[90vh] overflow-hidden relative">
+          <div className="w-full h-[75vh] md:h-[90] overflow-hidden relative">
             <ModelView
               index={1}
               groupRef={small}
@@ -103,6 +103,7 @@ const Model = () => {
 
           <div className="mx-auto w-full">
             <p className="text-sm font-light text-center mb-5">{model.title}</p>
+
             <div className="flex-center">
               <ul className="color-container">
                 {models.map((item, i) => (
